@@ -23,8 +23,7 @@ def startcode():
 def scheduleChanScraping(timespan):
     createNewSnapshot()
     scheduler = BlockingScheduler()
-    scheduler.add_job(startcode, 'interval', minutes=timespan, start_date='2018-02-16 20:25:00') #add , start_date='2018-01-05 17:21:00' later
+    scheduler.add_job(startcode, 'interval', minutes=timespan, start_date='2018-09-18 16:37:00') #add , start_date='2018-01-05 17:21:00' later
     scheduler.start()
 
-quit()
 scheduleChanScraping(5)

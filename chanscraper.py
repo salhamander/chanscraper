@@ -57,7 +57,7 @@ li_countriesarchived = []
 li_allimages = []
 
 def createNewSnapshot():
-    print('createNewSnapshot() called')
+    #('createNewSnapshot() called')
     global li_activethreads
     global filetime
     global outputfolder
@@ -351,7 +351,7 @@ def fetchPosts(activethreads, images):
                     di_threadmetadata['posts'] = startpost['replies'] + 1
 
                     di_metadata['threadsmetadata'][threadnumber] = di_threadmetadata   #append threads dict to metadata dict
-                    print(di_threadmetadata)
+                    #print(di_threadmetadata)
                     writeCSV()
                 
                 # determining what postition the post was on at time of query
@@ -364,8 +364,8 @@ def fetchPosts(activethreads, images):
                 break
 
         print('Finished thread ' + str(threadnumber)+ '\n' + str(index + 1) + ' / ' + str(len(li_threadslooped)) + ' threads complete')
-        print('Old posts (skipped): ' + str(count_postsskipped))
-        print('New posts (registered): ' + str(count_postshandled))
+        ##print('Old posts (skipped): ' + str(count_postsskipped))
+        ##print('New posts (registered): ' + str(count_postshandled))
         count_postshandled = 0
         count_postsskipped = 0
         closedstatechanged = False
@@ -522,7 +522,7 @@ def writeCSV():
             df.to_csv(f, index=False, encoding='utf-8')  #write headers at the first line
         else:
             df.to_csv(f, header=None, index=False, encoding='utf-8')
-    print('Finished writing thread to csv')
+    #print('Finished writing thread to csv')
 
 def resetVariables():                               #clear all variables for new scheduled run
     del li_no[:]
